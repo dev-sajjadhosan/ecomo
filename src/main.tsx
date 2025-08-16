@@ -6,12 +6,14 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import NotFound from '@/layouts/NotFound/NotFound'
 import RootLay from '@/layouts/Root/Root'
 import Home from '@/pages/Home/Home'
+import { Toaster } from 'sonner'
+
 
 const routes = createBrowserRouter([
   {
     path: '/',
     element: <RootLay />,
-    // errorElement: <NotFound />,
+    errorElement: <NotFound />,
     children: [
       {
         path: '/',
@@ -24,6 +26,7 @@ const routes = createBrowserRouter([
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <React.Suspense fallback={<Loading />}>
+      <Toaster richColors />
       <RouterProvider router={routes} />
     </React.Suspense>
   </StrictMode>,

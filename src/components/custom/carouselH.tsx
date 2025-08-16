@@ -12,6 +12,7 @@ import c from '../../assets/carousel/3.png'
 import d from '../../assets/carousel/4.png'
 import { Button } from '@/components/ui/button'
 import { ShoppingBag } from 'lucide-react'
+import { toast } from 'sonner'
 
 const carouselData = [
   {
@@ -64,6 +65,14 @@ export default function CarouselH() {
                       {c?.subHeading}
                     </h3>
                     <Button
+                      onClick={() =>
+                        toast.warning('Developer ,', {
+                          description:
+                            'We are currently working on this website. So, many part will be on Development Mode. Please Wait! we will be back soon.',
+                          position: 'top-center',
+                          duration: 5000,
+                        })
+                      }
                       variant="secondary"
                       className="flex items-center gap-2"
                     >
